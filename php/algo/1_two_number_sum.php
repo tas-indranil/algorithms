@@ -108,11 +108,25 @@ $exec_time = $end - $start;
 echo "\nTotal execution time: ".$exec_time." seconds\n";
 */
 
-// $values = [1, 4, 21, 7, 5, 8, 6, 9];
-// $target = 17;
+$valuesGiven = [1, 13, 21, 7, 15, 18, 6, 9];
+$target = 33;
 
-// foreach($values as $value)
-// {
-//     if(($target - $value))
-// }
 
+function arrayTwoSum($values, $target)
+{
+    $map = [];
+
+    foreach($values as $index => $num)
+    {
+        $remain = $target - $num;
+        if(isset($map[$remain]))
+        {
+            print_r($map);
+            echo "\n";
+            return [$remain, $num];
+        }
+        $map[$num] = $index;
+    }
+    return "Nothing";
+}
+print_r(arrayTwoSum($valuesGiven, $target));
