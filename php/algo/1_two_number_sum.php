@@ -112,17 +112,15 @@ $valuesGiven = [1, 13, 21, 7, 15, 18, 6, 9];
 $target = 33;
 
 
-function arrayTwoSum($values, $target)
+function arrayTwoSum($nums, $target)
 {
     $map = [];
 
-    foreach($values as $index => $num)
+    foreach($nums as $index => $num)
     {
         $remain = $target - $num;
         if(isset($map[$remain]))
         {
-            print_r($map);
-            echo "\n";
             return [$remain, $num];
         }
         $map[$num] = $index;
